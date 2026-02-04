@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificates - Sanket Jadhav</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo"><a href="index.html">Portfolio</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">My Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <section class="certifications" id="certifications">
+      <h1>Certifications & Achievements</h1>
+      <div class="certifications-grid">
+        <div class="cert-badge"><div class="cert-icon">🤖</div><h4><a href="https://www.credly.com/badges/b45c7148-e83b-429c-8253-7e32b2230188/public_url" target="_blank">Artificial Intelligence Fundamentals — IBM</a></h4><p>IBM — foundational AI concepts</p></div>
+
+        <div class="cert-badge"><div class="cert-icon">☁️</div><h4><a href="https://www.credly.com/badges/de6de898-1d4b-40d6-a1e4-651b7ddfc649/public_url" target="_blank">Cloud Computing Fundamentals — IBM</a></h4><p>IBM — cloud concepts and services</p></div>
+
+        <div class="cert-badge"><div class="cert-icon">🐍</div><h4><a href="https://online.innomatics.in/verify/M_301805" target="_blank">Python Programming</a></h4><p>Programming fundamentals with Python</p></div>
+
+        <div class="cert-badge"><div class="cert-icon">📊</div><h4><a href="https://online.innomatics.in/verify/M_202910" target="_blank">Exploratory Data Analysis</a></h4><p>Data exploration and visualization techniques</p></div>
+
+        <div class="cert-badge"><div class="cert-icon">🗄️</div><h4><a href="https://online.innomatics.in/verify/M_103861" target="_blank">Data Analysis with MySQL</a></h4><p>SQL querying and data analysis with MySQL</p></div>
+        <div class="cert-badge"><div class="cert-icon">🐍</div><h4><a href="https://www.hackerrank.com/certificates/887e49fdf3d2" target="_blank">Basic Python Programming</a></h4><p>Programming fundamentals with Python</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Sanket Jadhav. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>

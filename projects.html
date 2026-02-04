@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Sanket Jadhav</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo"><a href="index.html">Portfolio</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">My Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <section class="projects" id="projects">
+      <h1>Featured Projects</h1>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Pizza Sales SQL Analysis</h3>
+            <span class="project-tag">SQL</span>
+          </div>
+          <p>SQL-based analysis of pizza sales data: querying, aggregation, and insights to understand sales patterns and peak items.</p>
+          <div class="project-tech"><span>SQL</span><span>Data Analysis</span></div>
+          <a href="https://github.com/sankya-jadhav/pizza-sales-sql-analysis" target="_blank" class="project-link">View Repository →</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Library Management</h3>
+            <span class="project-tag">App</span>
+          </div>
+          <p>A Library Management system with CRUD operations and database integration to manage books, users, and lending records.</p>
+          <div class="project-tech"><span>Database</span><span>CRUD</span></div>
+          <a href="https://github.com/sankya-jadhav/Library_Management" target="_blank" class="project-link">View Repository →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Sanket Jadhav. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>

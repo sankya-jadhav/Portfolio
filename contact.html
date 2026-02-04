@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Sanket Jadhav</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo"><a href="index.html">Portfolio</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">My Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <div class="contact-form-card">
+          <form id="contactForm" class="contact-form" onsubmit="return false;">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" type="text" name="name" placeholder="Your name" required>
+
+            <label for="cf-email">Email</label>
+            <input id="cf-email" type="email" name="email" placeholder="your@email.com" required>
+
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="6" placeholder="Short message or inquiry" required></textarea>
+
+            <div class="form-actions">
+              <button id="cf-send" type="button" class="cta-button">Send</button>
+            </div>
+
+            <div id="cf-notice" class="cf-notice" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h1>Get In Touch</h1>
+          <p>I'm interested in opportunities and collaborations in data analysis and software. Drop a short message — I'll usually respond within a few business days.</p>
+
+          <div class="contact-links contact-links-vertical">
+            <a href="mailto:sanketj0213@gmail.com" class="contact-button">📧 Email</a>
+            <a href="https://www.linkedin.com/in/sanketjadhav02/" class="contact-button" target="_blank">💼 LinkedIn</a>
+            <a href="https://github.com/sankya-jadhav" class="contact-button" target="_blank">🐙 GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Sanket Jadhav. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+    });
+    
+    // Build mailto link from form fields and open user's mail client
+    (function(){
+      const form = document.getElementById('contactForm');
+      const sendBtn = document.getElementById('cf-send');
+      const toEmail = 'sanketj0213@gmail.com';
+
+      sendBtn && sendBtn.addEventListener('click', () => {
+        const name = document.getElementById('cf-name').value.trim();
+        const email = document.getElementById('cf-email').value.trim();
+        const message = document.getElementById('cf-message').value.trim();
+
+        if (!name || !email || !message) {
+          alert('Please fill in name, email and message before sending.');
+          return;
+        }
+
+        const subject = `Contact from ${name}`;
+        const plainBody = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+        const encodedSubject = encodeURIComponent(subject);
+        const encodedBody = encodeURIComponent(plainBody);
+        const mailto = `mailto:${toEmail}?subject=${encodedSubject}&body=${encodedBody}`;
+        const gmailBase = 'https://mail.google.com/mail/?view=cm&fs=1';
+        const gmailUrl = `${gmailBase}&to=${encodeURIComponent(toEmail)}&su=${encodedSubject}&body=${encodedBody}`;
+
+        // Try opening Gmail compose in a new tab; fallback to mailto. Show inline notice instead of alerts.
+        const noticeEl = document.getElementById('cf-notice');
+        try {
+          const win = window.open(gmailUrl, '_blank');
+          if (!win) throw new Error('popup-blocked');
+          noticeEl.textContent = 'Opening Gmail compose in a new tab...';
+        } catch (e) {
+          noticeEl.textContent = 'Unable to open Gmail. Opening your default mail client instead...';
+          window.location.href = mailto;
+        }
+        // clear notice after a while
+        setTimeout(() => { if (noticeEl) noticeEl.textContent = ''; }, 4500);
+      });
+    })();
+  </script>
+</body>
+</html>

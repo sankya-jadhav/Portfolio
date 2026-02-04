@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Resume - Sanket Jadhav</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo"><a href="index.html">Portfolio</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">My Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <section class="resume-hero">
+      <h1>Sanket Jadhav — Resume</h1>
+      <p>Data Science • Python • Machine Learning • SQL</p>
+    </section>
+
+    <section class="resume-view-section">
+      <div class="resume-container">
+        <div class="resume-view">
+          <!-- Place your PDF at `resume.pdf` in the same folder. -->
+          <iframe src="resume.pdf" title="Resume PDF" frameborder="0" aria-label="Resume PDF viewer"></iframe>
+        </div>
+
+        <aside class="resume-actions">
+          <div class="resume-actions-inner">
+            <p style="margin-bottom:8px; color:var(--text-gray);">Preview the resume on the left. Download a copy below.</p>
+            <a class="cta-button" href="resume.pdf" download>Download Resume (PDF)</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Sanket Jadhav. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>
